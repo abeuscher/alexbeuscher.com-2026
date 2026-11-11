@@ -1,0 +1,16 @@
+<section class="section section--contact" id="contact">
+  <div class="container">
+    <h2>{{ contactPrompt }}</h2>
+    {% if contactText %}<p class="lede">{{ contactText }}</p>{% endif %}
+    <ul class="contact-methods">
+      <li>
+        <span class="contact-methods__label">Email</span>
+        <a href="mailto:{{ site.email }}{% if contactSubject %}?subject={{ contactSubject | urlencode }}{% endif %}">{{ site.email }}</a>
+      </li>
+      <li>
+        <span class="contact-methods__label">Phone</span>
+        <a href="{{ site.phone | telHref }}">{{ site.phone }}</a>
+      </li>
+    </ul>
+  </div>
+</section>

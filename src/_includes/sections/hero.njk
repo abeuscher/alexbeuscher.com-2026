@@ -1,0 +1,22 @@
+{%- set d = s.data %}
+<section class="section section--hero"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container">
+    {% if d.eyebrow %}<p class="eyebrow">{{ d.eyebrow }}</p>{% endif %}
+    <h1>{{ d.headline }}</h1>
+    {% if d.subhead %}<p class="lede">{{ d.subhead | markdownInline | safe }}</p>{% endif %}
+    {% if s.content | trim %}<div class="prose">{{ s.content | safe }}</div>{% endif %}
+    {% if d.audio %}
+    <figure class="audio-feature">
+      <figcaption>{{ d.audio.title }}</figcaption>
+      <audio controls preload="metadata" src="{{ d.audio.src }}"></audio>
+    </figure>
+    {% endif %}
+    {% if d.actions %}
+    <p class="actions">
+      {%- for a in d.actions %}
+      <a class="button{% if not loop.first %} button--ghost{% endif %}" href="{{ a.href }}">{{ a.label }}</a>
+      {%- endfor %}
+    </p>
+    {% endif %}
+  </div>
+</section>

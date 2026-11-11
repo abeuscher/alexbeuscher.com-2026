@@ -1,0 +1,14 @@
+{%- set d = s.data %}
+<section class="section section--skills"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container container--narrow">
+    {% if d.heading %}<h2>{{ d.heading }}</h2>{% endif %}
+    <dl class="skills">
+      {%- for group in skills %}
+      <div class="skills__group">
+        <dt>{{ group.label }}</dt>
+        <dd>{{ group.items | join(" · ") }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>

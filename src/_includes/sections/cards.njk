@@ -1,0 +1,19 @@
+{%- set d = s.data %}
+<section class="section section--cards"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container">
+    {% if d.heading %}<h2>{{ d.heading }}</h2>{% endif %}
+    {% if s.content | trim %}<div class="prose section-intro">{{ s.content | safe }}</div>{% endif %}
+    <ul class="cards cards--{{ d.columns or 2 }}">
+      {%- for c in d.items %}
+      <li class="card">
+        {% if c.image %}<img class="card__image" src="{{ c.image }}" alt="{{ c.imageAlt or '' }}" loading="lazy">{% endif %}
+        <h3 class="card__title">{% if c.href %}<a href="{{ c.href }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</h3>
+        {% if c.meta %}<p class="card__meta">{{ c.meta }}</p>{% endif %}
+        {% if c.text %}<div class="card__text">{{ c.text | markdown | safe }}</div>{% endif %}
+        {% if c.href and c.linkLabel %}<p class="card__link"><a href="{{ c.href }}">{{ c.linkLabel }} →</a></p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    {% if d.link %}<p class="more-link"><a href="{{ d.link.href }}">{{ d.link.label }} →</a></p>{% endif %}
+  </div>
+</section>

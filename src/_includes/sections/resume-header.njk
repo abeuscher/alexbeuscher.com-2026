@@ -1,0 +1,15 @@
+{%- set d = s.data %}
+<section class="section section--hero section--resume-header">
+  <div class="container container--narrow">
+    <h1>{{ site.name }}</h1>
+    {% if d.tagline %}<p class="lede">{{ d.tagline }}</p>{% endif %}
+    <ul class="resume-contact">
+      <li>{{ site.location }}</li>
+      <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      <li><a href="{{ site.phone | telHref }}">{{ site.phone }}</a></li>
+      <li><a href="{{ site.linkedin }}">LinkedIn</a></li>
+      <li><a href="{{ site.github }}">GitHub</a></li>
+    </ul>
+    <p class="actions"><a class="button" href="{{ site.resumePdf }}" download>Download PDF</a></p>
+  </div>
+</section>

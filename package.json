@@ -1,0 +1,19 @@
+{
+  "name": "alexbeuscher-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "alexbeuscher.com — per-audience service pages, resume, and career story",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "dev": "npm run clean && eleventy --serve",
+    "build": "npm run clean && cross-env ELEVENTY_ENV=production eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.25.0",
+    "js-yaml": "^4.1.0",
+    "sass": "^1.89.0"
+  }
+}

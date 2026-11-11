@@ -1,0 +1,44 @@
+// Design tokens as CSS custom properties.
+// Look-and-feel decisions (type, color, spacing) live here.
+:root {
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-bg: #fafaf8;
+  --color-surface: #ffffff;
+  --color-text: #1c1c1a;
+  --color-muted: #5f5f5a;
+  --color-border: #e3e2dd;
+  --color-accent: #2b5fd9;
+  --color-accent-text: #ffffff;
+
+  --step--1: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --step-3: clamp(2.2rem, 1.8rem + 2vw, 3.2rem);
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: clamp(3rem, 2rem + 4vw, 6rem);
+
+  --radius: 10px;
+  --container: 70rem;
+  --container-narrow: 44rem;
+  --gutter: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #141413;
+    --color-surface: #1d1d1b;
+    --color-text: #ecebe6;
+    --color-muted: #a3a29b;
+    --color-border: #33322e;
+    --color-accent: #7fa3ff;
+    --color-accent-text: #0f1424;
+  }
+}

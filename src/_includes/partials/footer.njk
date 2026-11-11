@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      <p class="site-footer__name">{{ site.name }}</p>
+      <p>{{ site.location }} · <a href="mailto:{{ site.email }}">{{ site.email }}</a> · <a href="{{ site.phone | telHref }}">{{ site.phone }}</a></p>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="/resume/">Resume</a></li>
+      <li><a href="/story/">The Long Version</a></li>
+      <li><a href="{{ site.github }}">GitHub</a></li>
+      <li><a href="{{ site.linkedin }}">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="container"><p class="site-footer__copy">© {{ "now" | year }} {{ site.name }}</p></div>
+</footer>

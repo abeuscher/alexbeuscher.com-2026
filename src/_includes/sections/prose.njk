@@ -1,0 +1,8 @@
+{%- set d = s.data %}
+<section class="section section--prose{% if d.variant %} section--{{ d.variant }}{% endif %}"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container container--narrow">
+    {% if d.heading %}<h2>{{ d.heading }}</h2>{% endif %}
+    <div class="prose">{{ s.content | safe }}</div>
+    {% if d.link %}<p class="more-link"><a href="{{ d.link.href }}">{{ d.link.label }} →</a></p>{% endif %}
+  </div>
+</section>

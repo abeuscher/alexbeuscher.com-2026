@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+{%- for s in collections.section | sectionsFor(sections) %}
+{% include "sections/" + s.data.type + ".njk" %}
+{%- endfor %}
+{{ content | safe }}
+{%- if contactPrompt %}
+{% include "partials/contact.njk" %}
+{%- endif %}

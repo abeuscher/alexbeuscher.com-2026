@@ -1,0 +1,4 @@
+---
+type: skills
+heading: Skills
+---

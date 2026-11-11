@@ -1,0 +1,9 @@
+# Grouped skills for /resume. TODO: edit to taste.
+- label: Development
+  items: [WordPress (custom themes), JavaScript / TypeScript, PHP / Laravel, HTML & SCSS, Static site generators, Agent-assisted development (Claude Code and similar)]
+- label: Systems & networking
+  items: [OpenWRT, Small-business networks, CRM migration, Process documentation]
+- label: Writing & marketing
+  items: [Web copy, Marketing copy, Editing, Content strategy]
+- label: Audio
+  items: [Voice-over, Home studio recording and editing]

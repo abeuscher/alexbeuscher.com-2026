@@ -1,0 +1,26 @@
+{%- set d = s.data %}
+{%- set entries = history | byTag(d.tag) %}
+<section class="section section--history"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container container--narrow">
+    {% if d.heading %}<h2>{{ d.heading }}</h2>{% endif %}
+    {% if s.content | trim %}<div class="prose section-intro">{{ s.content | safe }}</div>{% endif %}
+    <ol class="history{% if d.compact %} history--compact{% endif %}">
+      {%- for e in entries %}
+      <li class="history__item">
+        <div class="history__head">
+          <h3 class="history__role">{{ e.role }}<span class="history__org">{{ e.org }}</span></h3>
+          <p class="history__dates">{{ e.start }}{% if e.end %} – {{ e.end }}{% endif %}</p>
+        </div>
+        {% if d.compact and e.summary %}
+        <p class="history__summary">{{ e.summary }}</p>
+        {% elif e.bullets %}
+        <ul class="history__bullets">
+          {%- for b in e.bullets %}<li>{{ b | markdownInline | safe }}</li>{%- endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+    {% if d.link %}<p class="more-link"><a href="{{ d.link.href }}">{{ d.link.label }} →</a></p>{% endif %}
+  </div>
+</section>

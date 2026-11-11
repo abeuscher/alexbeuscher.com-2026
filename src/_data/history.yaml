@@ -1,0 +1,50 @@
+# Single source of truth for work history.
+# Rendered in full on /resume, and filtered by tag on each service page.
+# Tags: web, vo, tech, copy  (an entry can have several)
+# Order: newest first.
+# `summary` is the one-liner used on service pages (compact view);
+# `bullets` are used on /resume.
+#
+# TODO: replace every placeholder (dates, bullets) with real entries.
+
+- role: Independent Consultant
+  org: Self-employed
+  start: "YYYY"
+  end: Present
+  tags: [web, vo, tech, copy]
+  summary: Websites, technical problem solving, voice-over, and copywriting for individuals and small businesses.
+  bullets:
+    - Rebuilt djmichael.com as a custom WordPress theme with structured content
+    - Designed and installed OpenWRT networks across a multi-building property, including cable runs
+    - Led a CRM migration for a nonprofit client
+    - Built NpHelper, an open-source Laravel/Filament/PostgreSQL CRM/CMS, with agent-assisted development
+
+- role: TODO Title
+  org: Contentstack
+  start: "YYYY"
+  end: "YYYY"
+  tags: [web, copy]
+  summary: TODO one-line summary of this role.
+  bullets:
+    - TODO accomplishment
+    - TODO accomplishment
+
+- role: TODO Title
+  org: Skydio
+  start: "YYYY"
+  end: "YYYY"
+  tags: [web, tech]
+  summary: TODO one-line summary of this role.
+  bullets:
+    - TODO accomplishment
+    - TODO accomplishment
+
+- role: TODO Title
+  org: 2K Games
+  start: "YYYY"
+  end: "YYYY"
+  tags: [web, copy]
+  summary: TODO one-line summary of this role.
+  bullets:
+    - TODO accomplishment
+    - TODO accomplishment

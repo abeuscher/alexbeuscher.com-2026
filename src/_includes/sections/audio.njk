@@ -1,0 +1,21 @@
+{%- set d = s.data %}
+<section class="section section--audio"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container container--narrow">
+    {% if d.heading %}<h2>{{ d.heading }}</h2>{% endif %}
+    {%- for group in d.groups %}
+    <div class="sample-group">
+      {% if group.label %}<h3>{{ group.label }}</h3>{% endif %}
+      <ul class="samples">
+        {%- for sample in group.samples %}
+        <li class="sample">
+          <p class="sample__title">{{ sample.title }}</p>
+          {% if sample.context %}<p class="sample__context">{{ sample.context }}</p>{% endif %}
+          <audio controls preload="none" src="{{ sample.src }}"></audio>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+    {% if s.content | trim %}<div class="prose note">{{ s.content | safe }}</div>{% endif %}
+  </div>
+</section>
