@@ -1,50 +1,142 @@
 # Single source of truth for work history.
-# Rendered in full on /resume, and filtered by tag on each service page.
+# /resume shows everything; each service page shows the entries tagged for it.
 # Tags: web, vo, tech, copy  (an entry can have several)
 # Order: newest first.
 # `summary` is the one-liner used on service pages (compact view);
 # `bullets` are used on /resume.
-#
-# TODO: replace every placeholder (dates, bullets) with real entries.
+# `earlier: true` moves an entry into the short "Earlier experience" list on /resume.
 
-- role: Independent Consultant
+- role: Independent Developer & Consultant
   org: Self-employed
-  start: "YYYY"
+  location: Amherst, MA
+  start: "2023"
   end: Present
   tags: [web, vo, tech, copy]
-  summary: Websites, technical problem solving, voice-over, and copywriting for individuals and small businesses.
+  summary: Building software with AI coding agents, plus websites, technical problem solving, voice-over, and copywriting for nonprofits and small businesses.
   bullets:
-    - Rebuilt djmichael.com as a custom WordPress theme with structured content
-    - Designed and installed OpenWRT networks across a multi-building property, including cable runs
-    - Led a CRM migration for a nonprofit client
-    - Built NpHelper, an open-source Laravel/Filament/PostgreSQL CRM/CMS, with agent-assisted development
+    - "**NpHelper (2026).** Designed and built an open-source CRM and website platform for small nonprofits (Laravel, Filament, PostgreSQL, Docker, Stripe), working with AI coding agents under my own review: 1,000+ commits, 3,100+ automated tests, and a [public demo](https://nphelper.com/demo)"
+    - "**AI workflow tooling (2026).** Published [session-kit](https://github.com/abeuscher/llm-session-kit), a Claude Code plugin that packages the session protocol, branch rules, and test gates I use to get reliable work from an agent"
+    - "**MAIA prototype (2024–2025).** Built the original prototype of a patient-controlled medical AI assistant for HIE of One, integrating OpenAI, Anthropic, Gemini, and Mistral behind GNAP authorization (Vue.js)"
+    - "**Client work (ongoing).** Rebuilt [djmichael.com](https://djmichael.com) as a custom WordPress theme, led a nonprofit's CRM migration and wrote its staff procedures, and designed and installed OpenWRT networks across several buildings for a private client"
+    - "**Online retail store (2023).** Founded and ran a store full time for nine months, building the brand and a headless Shopify storefront, then closed it when the dropshipping margins didn't hold up"
 
-- role: TODO Title
-  org: Contentstack
-  start: "YYYY"
-  end: "YYYY"
-  tags: [web, copy]
-  summary: TODO one-line summary of this role.
-  bullets:
-    - TODO accomplishment
-    - TODO accomplishment
-
-- role: TODO Title
+- role: Senior Web Developer
   org: Skydio
-  start: "YYYY"
-  end: "YYYY"
+  location: San Mateo, CA
+  start: "2020"
+  end: "2023"
   tags: [web, tech]
-  summary: TODO one-line summary of this role.
+  summary: Ran the marketing site on Eleventy and Sanity.io, managed contractors, and helped security with GDPR/CCPA compliance.
   bullets:
-    - TODO accomplishment
-    - TODO accomplishment
+    - Owned skydio.com, built on Eleventy and Sanity.io, and worked with stakeholders to keep improving it
+    - Managed several contract developers
+    - Assisted the security team with GDPR and CCPA compliance
 
-- role: TODO Title
-  org: 2K Games
-  start: "YYYY"
-  end: "YYYY"
-  tags: [web, copy]
-  summary: TODO one-line summary of this role.
+- role: Senior Web Developer & Team Lead
+  org: Contentstack
+  location: San Diego, CA (remote)
+  start: "2019"
+  end: "2021"
+  tags: [web, copy, vo]
+  summary: Led a six-person remote team building the marketing and docs sites; also wrote docs copy and recorded voice-over for product videos.
   bullets:
-    - TODO accomplishment
-    - TODO accomplishment
+    - Managed and mentored a six-person development team in Mumbai across time zones
+    - Built the marketing and documentation sites on the company's own headless CMS with Gatsby
+    - Cut the codebase roughly in half and made turnaround on new work about twice as fast by paying down technical debt and introducing pair programming
+    - Wrote copy for the product docs and recorded voice-over for demo videos
+
+- role: Senior Web Developer
+  org: Dynamic Signal (now Firstup)
+  location: San Bruno, CA (remote)
+  start: "2017"
+  end: "2020"
+  tags: [web, copy, tech]
+  summary: Owned every public web property for a B2B SaaS company, including the WordPress site, ZenDesk support center, Marketo, and product docs.
+  bullets:
+    - Rebuilt the WordPress theme, added version control, and removed front-end plugins, cutting average page load from 14 seconds to 2.5
+    - Doubled total site conversions through funnel and UX work, and helped the content team double time on page
+    - Ran the cross-department build of a custom-themed ZenDesk support site
+    - Managed Marketo and the Uberflip content hub, contributed to product docs, and worked with security on compliance
+    - Started as Web Production Manager (2017–2018)
+
+- role: Senior Web Developer
+  org: 2K Games
+  location: Novato, CA
+  start: "2013"
+  end: "2017"
+  tags: [web, tech]
+  summary: First full-time web developer in 2K's marketing department; moved the game sites from agency builds to one in-house headless CMS in 12 languages.
+  bullets:
+    - Joined as the marketing department's first full-time web developer, replacing agency-built sites with in-house process, source control, and tighter security
+    - Consolidated five systems into one headless CMS with a REST API and continuous deployment on AWS, supporting 12 languages and cutting costs about 60%
+    - Built and ran sites for Borderlands, XCOM, Civilization, WWE 2K, and Hangar 13
+    - Took part in regular security audits
+    - Promoted from Web Developer in 2016
+
+- role: Web Content Manager / Developer
+  org: Medley Health
+  location: Dublin, CA
+  start: "2011"
+  end: "2012"
+  tags: [web, copy]
+  summary: Ran the public websites and managed content for a healthcare startup.
+  bullets:
+    - Ran the public websites, managed content, and handled web development for a startup serving primary care practices
+
+- role: Online Content Director
+  org: WAAF & Mike FM (Entercom)
+  location: Boston, MA
+  start: "2008"
+  end: "2011"
+  tags: [vo, copy, web]
+  summary: Led the content team for two Boston radio stations, built apps and contest microsites, and recorded several commercials a week that aired on the stations.
+  bullets:
+    - Managed a team of content producers creating video, web, and mobile content with on-air personalities and visiting celebrities
+    - Built novelty apps, contest pages, and event microsites, and supported sales with branded web promotions
+    - Coached on-air staff on writing for the web and engaging their audience on social media
+    - Recorded several commercials a week for about two years, for local and national advertisers, all of which aired
+
+- role: Web Developer
+  org: Boston Interactive
+  location: Charlestown, MA
+  start: "2007"
+  end: "2008"
+  earlier: true
+  tags: [web]
+  summary: Agency front-end and PHP work for clients including FAO Schwarz, New England Coffee, and MedAssets.
+
+- role: Lead Web Developer
+  org: Nurse-Recruiter.com
+  location: Wellesley, MA
+  start: "2006"
+  end: "2007"
+  earlier: true
+  tags: [web, copy]
+  summary: Rewrote the site's software from Perl to PHP and its content for SEO; visitors and conversions more than doubled in 10 months.
+
+- role: Trivia Host & DJ
+  org: MCO Productions
+  location: Boston, MA
+  start: "2001"
+  end: "2011"
+  earlier: true
+  tags: [vo]
+  summary: Hosted pub trivia and worked weddings and events as DJ and MC.
+
+- role: After-School Instructor
+  org: Solomon Schechter Day School
+  location: Boston, MA
+  start: "2001"
+  end: "2003"
+  earlier: true
+  tags: []
+  summary: Taught video production and web design to students aged 9 to 12.
+
+- role: Webmaster
+  org: AMICAS, Inc.
+  location: Boston, MA
+  start: "1997"
+  end: "2000"
+  earlier: true
+  tags: [web]
+  summary: Redesigned the public site and built the intranet and customer support center for a medical imaging software company.

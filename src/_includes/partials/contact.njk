@@ -8,8 +8,12 @@
         <a href="mailto:{{ site.email }}{% if contactSubject %}?subject={{ contactSubject | urlencode }}{% endif %}">{{ site.email }}</a>
       </li>
       <li>
-        <span class="contact-methods__label">Phone</span>
+        <span class="contact-methods__label">Call or text</span>
         <a href="{{ site.phone | telHref }}">{{ site.phone }}</a>
+      </li>
+      <li>
+        <span class="contact-methods__label">Elsewhere</span>
+        <a href="{{ site.linkedin }}">LinkedIn</a> <span aria-hidden="true">·</span> <a href="{{ site.github }}">GitHub</a> <span aria-hidden="true">·</span> <a href="{{ site.resumePdf }}">Resume (PDF)</a>
       </li>
     </ul>
   </div>

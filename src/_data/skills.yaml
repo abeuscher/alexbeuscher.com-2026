@@ -1,9 +1,13 @@
-# Grouped skills for /resume. TODO: edit to taste.
-- label: Development
-  items: [WordPress (custom themes), JavaScript / TypeScript, PHP / Laravel, HTML & SCSS, Static site generators, Agent-assisted development (Claude Code and similar)]
-- label: Systems & networking
-  items: [OpenWRT, Small-business networks, CRM migration, Process documentation]
-- label: Writing & marketing
-  items: [Web copy, Marketing copy, Editing, Content strategy]
-- label: Audio
-  items: [Voice-over, Home studio recording and editing]
+# Grouped skills for /resume.
+- label: Languages & frameworks
+  items: [JavaScript, TypeScript, PHP, Laravel, React, Vue.js, Node.js, HTML, CSS / SCSS, SQL / PostgreSQL, GraphQL, GROQ]
+- label: Platforms & tools
+  items: [WordPress (custom themes), Eleventy, Gatsby, Sanity.io, Contentstack, Filament, Docker, AWS, Git, Figma]
+- label: AI
+  items: [OpenAI / Anthropic / Gemini / Mistral APIs, LLM application architecture, RAG, Agent-assisted development (Claude Code)]
+- label: Marketing & content
+  items: [SEO, Content strategy, Analytics (GA4), Marketo, Localization, Technical writing, Copy editing]
+- label: Privacy & operations
+  items: [GDPR / CCPA compliance (OneTrust), ZenDesk, Small-business networking (OpenWRT), Process documentation]
+- label: Audio & video
+  items: [Voice-over, Audio editing, Video production (Final Cut Pro)]

@@ -1,0 +1,25 @@
+{%- set d = s.data %}
+<section class="section section--feature{% if d.variant %} section--feature-{{ d.variant }}{% endif %}"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container feature">
+    <div class="feature__body">
+      {% if d.eyebrow %}<p class="eyebrow">{{ d.eyebrow }}</p>{% endif %}
+      <h2>{{ d.heading }}</h2>
+      {% if d.meta %}<p class="card__meta">{{ d.meta }}</p>{% endif %}
+      <div class="prose">{{ s.content | safe }}</div>
+      {% if d.tech %}<ul class="tags">{% for t in d.tech %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+      {% if d.actions %}
+      <p class="actions">
+        {%- for a in d.actions %}
+        <a class="button{% if not loop.first %} button--ghost{% endif %}" href="{{ a.href }}">{{ a.label }}</a>
+        {%- endfor %}
+      </p>
+      {% endif %}
+    </div>
+    {% if d.image %}
+    <figure class="feature__media">
+      <img src="{{ d.image }}" alt="{{ d.imageAlt or '' }}" loading="lazy" width="1280" height="800">
+      {% if d.caption %}<figcaption>{{ d.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+  </div>
+</section>

@@ -50,13 +50,21 @@ export default function (eleventyConfig) {
   // Sections for a page, in filename order (10-hero.md, 20-work.md, ...)
   eleventyConfig.addFilter("sectionsFor", (items, slug) =>
     (items || [])
-      .filter((i) => i.data.pageSlug === slug)
+      .filter((i) => i.data.pageSlug === slug && !i.data.draft)
       .sort((a, b) => a.inputPath.localeCompare(b.inputPath))
   );
 
   // Work history filtered by tag ("all" or empty returns everything)
   eleventyConfig.addFilter("byTag", (entries, tag) =>
     !tag || tag === "all" ? entries : (entries || []).filter((e) => (e.tags || []).includes(tag))
+  );
+
+  // Split history into recent and earlier roles (entries flagged `earlier: true`).
+  // era: "recent" | "earlier" | anything else returns everything.
+  eleventyConfig.addFilter("byEra", (entries, era) =>
+    era === "recent" ? (entries || []).filter((e) => !e.earlier)
+    : era === "earlier" ? (entries || []).filter((e) => e.earlier)
+    : entries
   );
 
   eleventyConfig.addFilter("markdown", (str) => (str ? md.render(String(str)) : ""));

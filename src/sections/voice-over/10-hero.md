@@ -1,9 +1,11 @@
 ---
 type: hero
 eyebrow: Voice-Over
-headline: TODO headline about your voice.
-subhead: TODO one line on your voice and range.
-audio:
-  title: Main demo
-  src: /audio/demo-main.mp3
+headline: Voice-over for commercials, promos, and product videos.
+subhead: I spent about two years in Boston radio recording several commercials a week, all of which aired. Since then I've voiced product demo videos for the companies I've worked for and for freelance clients.
+actions:
+  - label: Hear samples
+    href: "#samples"
+  - label: Send a script
+    href: "#contact"
 ---

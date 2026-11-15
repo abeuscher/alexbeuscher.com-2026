@@ -1,0 +1,15 @@
+{%- set d = s.data %}
+<section class="section section--stats"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container">
+    {% if d.heading %}<h2 class="visually-hidden">{{ d.heading }}</h2>{% endif %}
+    <dl class="stats">
+      {%- for item in d.items %}
+      <div class="stat">
+        <dt class="stat__label">{{ item.label }}</dt>
+        <dd class="stat__value">{{ item.value }}</dd>
+        {% if item.context %}<dd class="stat__context">{{ item.context }}</dd>{% endif %}
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>

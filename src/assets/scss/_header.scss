@@ -5,17 +5,28 @@
   border-bottom: 1px solid var(--color-border);
 
   &__inner {
-    display: flex; align-items: center; justify-content: space-between;
+    position: relative; // anchors the dropdown nav
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
     min-height: 4rem;
   }
 }
 
 .wordmark {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 750; letter-spacing: -0.02em;
   font-size: var(--step-1);
   color: var(--color-text);
   text-decoration: none;
+}
+
+.header-cta {
+  margin-left: auto; margin-right: var(--space-s);
+  font-size: var(--step--1); font-weight: 600; text-decoration: none;
+  color: var(--color-text);
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--color-border); border-radius: 999px;
+  background: var(--color-surface);
+  &:hover { border-color: var(--color-accent); color: var(--color-accent); }
 }
 
 .nav-toggle {
@@ -47,11 +58,13 @@
   }
 }
 
-// Without JS the nav is simply visible below the header.
+// Without JS the nav is simply visible below the header, full width.
 .site-nav {
+  flex-basis: 100%;
+
   ul {
     list-style: none; margin: 0;
-    padding-block: var(--space-s);
+    padding: 0 0 var(--space-s);
     display: grid; gap: 0.25rem;
   }
   a {
@@ -60,9 +73,24 @@
     &:hover, &[aria-current="page"] { color: var(--color-accent); }
   }
 
+  // With JS it becomes a dropdown panel, right-aligned under the toggle.
   .js & {
     display: none;
-    border-top: 1px solid var(--color-border);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: var(--gutter);
+    width: min(16rem, calc(100vw - 2 * var(--gutter)));
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     &.is-open { display: block; }
+
+    ul { padding: 0.5rem; gap: 0; }
+    a {
+      padding: 0.6rem 0.85rem;
+      border-radius: calc(var(--radius) - 4px);
+      &:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+    }
   }
 }

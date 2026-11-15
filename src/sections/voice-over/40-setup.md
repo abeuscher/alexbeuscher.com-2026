@@ -1,5 +1,6 @@
 ---
 type: prose
+draft: true
 heading: Setup & logistics
 ---
 - **Studio:** TODO mic, interface, booth/treatment

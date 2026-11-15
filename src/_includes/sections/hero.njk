@@ -1,22 +1,30 @@
 {%- set d = s.data %}
-<section class="section section--hero"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
-  <div class="container">
-    {% if d.eyebrow %}<p class="eyebrow">{{ d.eyebrow }}</p>{% endif %}
-    <h1>{{ d.headline }}</h1>
-    {% if d.subhead %}<p class="lede">{{ d.subhead | markdownInline | safe }}</p>{% endif %}
-    {% if s.content | trim %}<div class="prose">{{ s.content | safe }}</div>{% endif %}
-    {% if d.audio %}
-    <figure class="audio-feature">
-      <figcaption>{{ d.audio.title }}</figcaption>
-      <audio controls preload="metadata" src="{{ d.audio.src }}"></audio>
-    </figure>
-    {% endif %}
-    {% if d.actions %}
-    <p class="actions">
-      {%- for a in d.actions %}
-      <a class="button{% if not loop.first %} button--ghost{% endif %}" href="{{ a.href }}">{{ a.label }}</a>
-      {%- endfor %}
-    </p>
+<section class="section section--hero{% if d.image %} section--hero-media{% endif %}"{% if d.anchor %} id="{{ d.anchor }}"{% endif %}>
+  <div class="container hero">
+    <div class="hero__body">
+      {% if d.eyebrow %}<p class="eyebrow">{{ d.eyebrow }}</p>{% endif %}
+      <h1>{{ d.headline }}</h1>
+      {% if d.subhead %}<p class="lede">{{ d.subhead | markdownInline | safe }}</p>{% endif %}
+      {% if s.content | trim %}<div class="prose">{{ s.content | safe }}</div>{% endif %}
+      {% if d.audio %}
+      <figure class="audio-feature">
+        <figcaption>{{ d.audio.title }}</figcaption>
+        <audio controls preload="metadata" src="{{ d.audio.src }}"></audio>
+      </figure>
+      {% endif %}
+      {% if d.actions %}
+      <p class="actions">
+        {%- for a in d.actions %}
+        <a class="button{% if not loop.first %} button--ghost{% endif %}" href="{{ a.href }}">{{ a.label }}</a>
+        {%- endfor %}
+      </p>
+      {% endif %}
+      {% if d.proof %}<p class="hero__proof"><span>{{ d.proof.label }}</span> {{ d.proof.items | join(" · ") }}</p>{% endif %}
+    </div>
+    {% if d.image %}
+    <div class="hero__media">
+      <img src="{{ d.image }}" alt="{{ d.imageAlt or '' }}" width="{{ d.imageWidth or 450 }}" height="{{ d.imageHeight or 450 }}">
+    </div>
     {% endif %}
   </div>
 </section>

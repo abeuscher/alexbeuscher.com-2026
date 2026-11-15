@@ -1,44 +1,65 @@
 // Design tokens as CSS custom properties.
 // Look-and-feel decisions (type, color, spacing) live here.
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-latin-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light dark;
+
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: var(--font-body);
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-bg: #fafaf8;
+  --color-bg: #f7f6f2;
   --color-surface: #ffffff;
-  --color-text: #1c1c1a;
-  --color-muted: #5f5f5a;
-  --color-border: #e3e2dd;
-  --color-accent: #2b5fd9;
+  --color-sunken: #efede7;
+  --color-text: #17191a;
+  --color-muted: #5a5e5c;
+  --color-border: #dfddd5;
+  --color-accent: #0d5c46;
+  --color-accent-soft: #e2efe9;
   --color-accent-text: #ffffff;
+  --color-band: #12251f;
+  --color-band-text: #f1f5f2;
+  --color-band-muted: #a9bdb4;
+  --color-band-link: #8fe0bf;
+  --shadow: 0 1px 2px rgb(20 30 25 / 0.05), 0 8px 24px -12px rgb(20 30 25 / 0.18);
 
-  --step--1: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
-  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
-  --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
-  --step-3: clamp(2.2rem, 1.8rem + 2vw, 3.2rem);
+  --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.35vw, 1.3rem);
+  --step-2: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  --step-3: clamp(2.1rem, 1.6rem + 2.4vw, 3.4rem);
 
   --space-xs: 0.5rem;
   --space-s: 1rem;
   --space-m: 1.5rem;
   --space-l: 2.5rem;
-  --space-xl: clamp(3rem, 2rem + 4vw, 6rem);
+  --space-xl: clamp(3rem, 2rem + 4vw, 5.5rem);
 
-  --radius: 10px;
-  --container: 70rem;
-  --container-narrow: 44rem;
-  --gutter: 16px;
+  --radius: 12px;
+  --container: 72rem;
+  --container-narrow: 46rem;
+  --gutter: clamp(16px, 4vw, 32px);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #141413;
-    --color-surface: #1d1d1b;
-    --color-text: #ecebe6;
-    --color-muted: #a3a29b;
-    --color-border: #33322e;
-    --color-accent: #7fa3ff;
-    --color-accent-text: #0f1424;
+    --color-bg: #121413;
+    --color-surface: #1b1e1d;
+    --color-sunken: #0d0f0e;
+    --color-text: #eceeed;
+    --color-muted: #a2a8a5;
+    --color-border: #2e3331;
+    --color-accent: #7ad6b4;
+    --color-accent-soft: #1b2f28;
+    --color-accent-text: #0c1a15;
+    --color-band: #0b1512;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.6);
   }
 }
